@@ -1,10 +1,13 @@
+ /**
+  * This page is created for inserting dummy data into mongodb
+  * This should NEVER be used in prod
+  * Should be replaced by adding files through the web app.
+  */
 const express = require('express');
+const adminRouter = express.Router();
+const mongoose = require('mongoose');
+const bookModel = require('../models/bookModel');
 
-var adminRouter = express.Router();
-
-var mongoose = require('mongoose');
-
-var dbConfig = require('../db.config');
 
   
   var booksArray = [{
@@ -45,32 +48,19 @@ var dbConfig = require('../db.config');
 
     var Schema = mongoose.Schema;
 
-var bookSchema = new Schema({
-    _id: Schema.Types.ObjectId,
-    cat: Array,
-    name: String,
-    author: String,
-    read: Boolean,
-    price: Number
-});
-
-var BookModel = mongoose.model('Books', bookSchema);
-
-
 var router = (nav) => {
 
     adminRouter.route('/addBooks')
         .get((req, res) => {
 
-            //mongoose.connect(dbConfig.database);
-
-            BookModel.collection.insert(booksArray, onInsert);
+            bookModel.collection.insert(booksArray, onInsert);
 
             function onInsert(err, docs) {
                 if (err) {
                     return console.log('err ' + err)
                 }
 
+                //Shows in term/command line that everything has inserted 
                 return console.log(res.send = docs)
             }
         });

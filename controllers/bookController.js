@@ -5,7 +5,8 @@ var bookController = (bookService, nav) => {
     //Ensure the user is logged in
     var middleware = (req, res, next) => {
         if (!req.user) {
-            //return res.redirect('/');
+            //Comment this out if you don't want to create a user
+            return res.redirect('/');
         }
         next();
     };
