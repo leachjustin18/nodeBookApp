@@ -1,0 +1,64 @@
+
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-12">
+
+                <div class="panel">
+                    <div class="panel-body">
+
+
+
+                        <!--/stories-->
+                      
+                        <div class="row">
+                            <br>
+                            <div class="col-md-2 col-sm-3 text-center">
+                                <img src="/{{{books.img}}}" alt="{{books.book.title}}" style="width:100px;">
+                            </div>
+                            <div class="col-md-10 col-sm-9">
+                                <h3>{{books.name}}</h3>
+                                <div class="row">
+                                    <div class="col-xs-9">
+                                        <h4><span class="label label-default">{{books.author}}</span></h4>
+                                        </div>
+                                    <div class="col-xs-3"></div>
+                                </div>
+                                <br><br>
+                                {{books.book.description}}
+
+
+                                {{#if books.book.publisher}}
+                                    <br/>
+                                    <br/>
+
+                                Publisher: {{books.book.publisher}}
+                                {{/if}}
+
+                                {{#if books.book.publication_month}}
+                                    <br/>
+                                    <br/>
+                                    Published Date:  {{books.book.publication_month}}/{{books.book.publication_day}}/{{books.book.publication_year}}
+                                {{/if}}
+                            </div>
+                        </div>
+                        <hr>
+                        
+
+
+                        <!--/stories-->
+
+                    </div>
+                </div>
+
+
+
+            </div>
+            <!--/col-12-->
+        </div>
+    </div>
+
+
+    <hr>
